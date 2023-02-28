@@ -6,25 +6,41 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:33:43 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/23 20:44:28 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/25 18:36:16 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_position(t_list *a, int idx)
+int	find_smallest_index(t_list **a)
+{
+	t_list	*temp;
+	int		min;
+
+	temp = *a;
+	min = temp->index;
+	while (temp)
+	{
+		if (temp->index < min)
+			min = temp->index;
+		temp = temp->next;
+	}
+	return (min);
+}
+
+int	find_position(t_list **a)
 {
 	t_list	*temp;
 	int		i;
 
 	i = 0;
-	temp = a;
+	temp = *a;
 	while (temp)
 	{
-		if (temp->index == idx)
+		if (temp->index == find_smallest_index(&temp))
 			break ;
-		temp = temp->next;
 		i++;
+		temp = temp->next;
 	}
 	return (i);
 }
@@ -34,7 +50,7 @@ int	ft_is_sorted(t_list **data)
 	t_list	*temp;
 
 	temp = *data;
-	while (temp)
+	while (temp->next)
 	{
 		if (temp->index > temp->next->index)
 			return (0);

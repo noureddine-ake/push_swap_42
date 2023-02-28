@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 13:57:09 by nakebli           #+#    #+#              #
-#    Updated: 2023/02/23 19:46:43 by nakebli          ###   ########.fr        #
+#    Updated: 2023/02/25 19:08:43 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ SRCS = main.c \
 	rules/swap.c \
 	rules/revers.c \
 	rules/rrevers.c \
-	sort/sort_5nums.c 
+	sort/sort_5nums.c \
+	sort/big_sort.c 
 
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 
 HEADER = push_swap.h
 

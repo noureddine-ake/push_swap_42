@@ -6,17 +6,34 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:19:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/23 20:23:49 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/27 21:48:22 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_list *data)
+void	print_lista(t_list *data)
 {
 	t_list	*temp;
 
 	temp = data;
+	ft_putstr_fd("----------STACK A---------\n", 1);
+	while (temp != NULL)
+	{
+		ft_putnbr_fd(temp->content, 1);
+		ft_putchar_fd('\t', 1);
+		ft_putnbr_fd(temp->index, 1);
+		ft_putchar_fd('\n', 1);
+		temp = temp->next;
+	}
+}
+
+void	print_listb(t_list *data)
+{
+	t_list	*temp;
+
+	temp = data;
+	ft_putstr_fd("----------STACK B---------\n", 1);
 	while (temp != NULL)
 	{
 		ft_putnbr_fd(temp->content, 1);
@@ -33,14 +50,19 @@ int	main(int ac, char **av)
 	t_list	*b;
 
 	b = NULL;
-	if (ac < 3)
-		return (1);
+	if (ac < 2)
+		exit_failure("enter some numbers to sort");
 	a = NULL;
 	a = read_numbers(av, a);
 	set_index(a);
-	print_list(a);
-	ft_putstr_fd("-------\n", 1);
-	sort_4_5nums(&a, &b);
-	ft_putstr_fd("-------\n", 1);
-	print_list(a);
+	print_lista(a);
+	if (ft_lstsize(a) == 2)
+		sort_2nums(&a);
+	else if (ft_lstsize(a) >= 3 && ft_lstsize(a) <= 5)
+		sort_4_5nums(&a, &b);
+	else if (ft_lstsize(a) > 5 && ft_lstsize(a) <= 200)
+		big_sort(&a, &b, 5);
+	else if (ft_lstsize(a) > 200 && ft_lstsize(a) <= 500)
+		big_sort(&a, &b, 10);
+	print_listb(b);
 }
