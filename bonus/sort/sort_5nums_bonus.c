@@ -6,11 +6,11 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:44:04 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 14:46:51 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 17:28:08 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
 void	sort_2nums(t_list **a)
 {

@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 23:42:34 by nakebli           #+#    #+#              #
-#    Updated: 2023/02/22 14:10:35 by nakebli          ###   ########.fr        #
+#    Updated: 2023/02/28 17:32:06 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRCS =	ft_isalpha.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	exit_failure.c 
+	exit_failure.c \
+	get_next_line.c
 
 B_SRCS = ft_lstnew.c \
 	ft_lstadd_front.c \

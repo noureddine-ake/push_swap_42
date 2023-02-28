@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:39:47 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/22 14:16:22 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 17:31:50 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	exit_failure(char *str);
+char	*get_next_line(int fd);
 //bonus
 typedef struct s_list
 {
