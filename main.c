@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:19:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/27 21:48:22 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 14:36:41 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	main(int ac, char **av)
 	a = NULL;
 	a = read_numbers(av, a);
 	set_index(a);
-	print_lista(a);
 	if (ft_lstsize(a) == 2)
 		sort_2nums(&a);
 	else if (ft_lstsize(a) >= 3 && ft_lstsize(a) <= 5)
@@ -64,5 +63,4 @@ int	main(int ac, char **av)
 		big_sort(&a, &b, 5);
 	else if (ft_lstsize(a) > 200 && ft_lstsize(a) <= 500)
 		big_sort(&a, &b, 10);
-	print_listb(b);
 }

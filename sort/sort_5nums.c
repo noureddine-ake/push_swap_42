@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:44:04 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 12:53:31 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 14:34:32 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ void	sort_4_5nums(t_list **a, t_list **b)
 		}
 		pb(a, b);
 	}
-	sort_3nums(a);
-	while (ft_lstsize(*b) != 0)
-		pa(a, b);
+	if (ft_lstsize(*a) == 3)
+		sort_3nums(a);
+	else if (ft_lstsize(*a) == 2)
+		sort_2nums(a);
+	pa(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:34:11 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 12:52:50 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 14:25:55 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	big_sort(t_list **a, t_list **b, int div)
 		find_element_in_chunk(a, b, e_chunk, chunk_size);
 		num_chunk++;
 	}
-	sort_4_5nums(a, b);
+	if (*a)
+		sort_4_5nums(a, b);
 	push_back(a, b);
-	print_lista(*a);
 }

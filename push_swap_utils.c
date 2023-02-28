@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:33:43 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/25 18:36:16 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/02/28 13:25:25 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_is_sorted(t_list **data)
 	t_list	*temp;
 
 	temp = *data;
+	if (ft_lstsize(temp) <= 1)
+		return (1);
 	while (temp->next)
 	{
 		if (temp->index > temp->next->index)
