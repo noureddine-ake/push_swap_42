@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 20:14:52 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/25 21:13:45 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 19:27:22 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ void	sb(t_list **b, int flag)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b, int flag)
 {
 	sa(a, 1);
 	sb(b, 1);
-	ft_putstr_fd("ss\n", 1);
+	if (!flag)
+		ft_putstr_fd("ss\n", 1);
 }

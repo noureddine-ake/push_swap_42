@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:33:43 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 13:25:25 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 16:42:49 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_is_sorted(t_list **data)
 		return (1);
 	while (temp->next)
 	{
-		if (temp->index > temp->next->index)
+		if (temp->index != temp->next->index + 1)
 			return (0);
 		temp = temp->next;
 	}
@@ -69,4 +69,17 @@ void	free_2d_arr(char **str)
 	while (str[++i])
 		free(str[i]);
 	free(str);
+}
+
+void	free_all(t_list *a)
+{
+	t_list	*tmp;
+
+	while (a->next)
+	{
+		tmp = a;
+		a = a->next;
+		free(tmp);
+	}
+	free(a);
 }

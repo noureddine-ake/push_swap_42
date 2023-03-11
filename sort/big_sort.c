@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:34:11 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 14:54:02 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 19:30:24 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	find_element_in_chunk(t_list **a, t_list **b, int e, int chunk_size)
 	int	i;
 
 	i = 0;
-	while (i < chunk_size)
+	while (i < chunk_size && *a)
 	{
 		while ((*a)->index >= e)
 			ra(a, 0);
-		pb(a, b);
+		pb(a, b, 0);
 		if ((*b)->index < e - (chunk_size / 2))
 		{
 			if ((*a && (*a)->index >= e && i < chunk_size)
 				|| (*a && (*a)->index >= e + chunk_size && i == chunk_size))
-				rr(a, b);
+				rr(a, b, 0);
 			else
 				rb(b, 0);
 		}
@@ -84,7 +84,7 @@ static void	push_back(t_list **a, t_list **b)
 			while (find_bigi_position(b) != 0)
 				rb(b, 0);
 		}
-		pa(a, b);
+		pa(a, b, 0);
 	}
 }
 
@@ -92,20 +92,16 @@ void	big_sort(t_list **a, t_list **b, int div)
 {
 	int	e_chunk;
 	int	st_size;
-	int	num_chunk;
 	int	chunk_size;
 
-	num_chunk = 1;
 	st_size = ft_lstsize(*a);
 	chunk_size = st_size / div;
 	e_chunk = 0;
-	while (e_chunk < chunk_size * div)
+	while (st_size != 0)
 	{
-		e_chunk = (chunk_size) * num_chunk;
+		e_chunk += (chunk_size);
 		find_element_in_chunk(a, b, e_chunk, chunk_size);
-		num_chunk++;
+		st_size = ft_lstsize(*a);
 	}
-	if (*a)
-		sort_4_5nums(a, b);
 	push_back(a, b);
 }

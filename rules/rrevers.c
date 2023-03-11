@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:28:18 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/25 21:13:26 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 19:27:00 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ void	rrb(t_list **b, int flag)
 		ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b, int flag)
 {
 	rra(a, 1);
 	rrb(b, 1);
-	ft_putstr_fd("rrr\n", 1);
+	if (!flag)
+		ft_putstr_fd("rrr\n", 1);
 }

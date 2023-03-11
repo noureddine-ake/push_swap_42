@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:44:04 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 14:46:51 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 19:29:45 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	sort_3nums(t_list **a)
 
 void	sort_4_5nums(t_list **a, t_list **b)
 {
+	if (ft_lstsize(*a) == 3)
+		return (sort_3nums(a));
 	while (!ft_is_sorted(a) && ft_lstsize(*a) > 3)
 	{
 		while (find_position(a) != 0)
@@ -55,12 +57,13 @@ void	sort_4_5nums(t_list **a, t_list **b)
 			else
 				rra(a, 0);
 		}
-		pb(a, b);
+		pb(a, b, 0);
 	}
 	if (ft_lstsize(*a) == 3)
 		sort_3nums(a);
 	else if (ft_lstsize(*a) == 2)
 		sort_2nums(a);
+	pa(a, b, 0);
 	if (*b)
-		pa(a, b);
+		pa(a, b, 0);
 }

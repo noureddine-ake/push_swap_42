@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:31:28 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 17:31:29 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 17:55:53 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static char	*read_save(int fd, char *line)
 		}
 		if (i == 0)
 			break ;
+		buff[i] = '\0';
 		line = ft_strjoin(line, buff);
 	}
 	return (free(buff), line);

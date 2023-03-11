@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:19:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 17:00:37 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/11 19:34:44 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,6 @@ void	print_listb(t_list *data)
 		ft_putchar_fd('\n', 1);
 		temp = temp->next;
 	}
-}
-
-void	free_all(t_list *a)
-{
-	t_list	*tmp;
-
-	while (a->next)
-	{
-		tmp = a;
-		a = a->next;
-		free(tmp);
-	}
-	free(a);
 }
 
 int	main(int ac, char **av)
