@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:34:11 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 19:30:24 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/12 21:15:54 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	big_sort(t_list **a, t_list **b, int div)
 	st_size = ft_lstsize(*a);
 	chunk_size = st_size / div;
 	e_chunk = 0;
-	while (st_size != 0)
+	while (st_size != 0 && !ft_is_sorted(a))
 	{
 		e_chunk += (chunk_size);
 		find_element_in_chunk(a, b, e_chunk, chunk_size);
