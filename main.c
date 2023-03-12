@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:19:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 19:34:44 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/12 18:10:51 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int ac, char **av)
 	else if (ft_lstsize(a) >= 3 && ft_lstsize(a) <= 5)
 		sort_4_5nums(&a, &b);
 	else if (ft_lstsize(a) > 5 && ft_lstsize(a) <= 200)
-		big_sort(&a, &b, 5);
+		big_sort(&a, &b, 4);
 	else if (ft_lstsize(a) > 200 && ft_lstsize(a) <= 500)
 		big_sort(&a, &b, 9);
 	free_all(a);

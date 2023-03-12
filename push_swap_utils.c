@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:33:43 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 16:42:49 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/12 14:32:13 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_is_sorted(t_list **data)
 		return (1);
 	while (temp->next)
 	{
-		if (temp->index != temp->next->index + 1)
+		if (temp->index > temp->next->index)
 			return (0);
 		temp = temp->next;
 	}

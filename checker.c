@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:45:28 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 19:28:39 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/12 18:18:28 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ int	main(int ac, char **av)
 	char	*s;
 
 	if (ac < 2)
-		exit_failure("enter some numbers to sort");
-	a = NULL;
-	b = NULL;
+		exit_failure("\x1B[31menter some numbers to sort");
 	a = read_numbers(av, a);
 	set_index(a);
 	s = get_next_line(0);
@@ -75,14 +73,14 @@ int	main(int ac, char **av)
 		{
 			free(s);
 			free_all(a);
-			write(1, "Error!\n", 8);
+			exit_failure("\x1B[31mError!\n");
 		}
 		free(s);
 		s = get_next_line(0);
 	}
-	if (ft_is_sorted(&a))
-		write(1, "KO\n", 3);
+	if (!ft_is_sorted(&a))
+		write(1, "\x1B[31mKO\n", 8);
 	else
-		write(1, "OK\n", 3);
+		write(1, "\x1B[32mOK\n", 8);
 	free_all(a);
 }
