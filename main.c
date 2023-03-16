@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:19:10 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/12 21:13:48 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/16 22:51:56 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,5 @@ int	main(int ac, char **av)
 		big_sort(&a, &b, 4);
 	else if (ft_lstsize(a) > 200 && ft_lstsize(a) <= 500)
 		big_sort(&a, &b, 9);
-	print_lista(a);
 	free_all(a);
 }

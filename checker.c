@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:45:28 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/12 18:18:28 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/16 22:52:49 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@ void	print_lista(t_list *data)
 
 	temp = data;
 	ft_putstr_fd("----------STACK A---------\n", 1);
+	while (temp != NULL)
+	{
+		ft_putnbr_fd(temp->content, 1);
+		ft_putchar_fd('\t', 1);
+		ft_putnbr_fd(temp->index, 1);
+		ft_putchar_fd('\n', 1);
+		temp = temp->next;
+	}
+}
+
+void	print_listb(t_list *data)
+{
+	t_list	*temp;
+
+	temp = data;
+	ft_putstr_fd("----------STACK B---------\n", 1);
 	while (temp != NULL)
 	{
 		ft_putnbr_fd(temp->content, 1);
@@ -49,11 +65,16 @@ static int	set_rule(char *s, t_list **a, t_list **b)
 	else if (ft_strnstr(s, "rra\n", 4))
 		return (rra(a, 1), 1);
 	else if (ft_strnstr(s, "rrb\n", 4))
-		return (rrb(a, 1), 1);
+		return (rrb(b, 1), 1);
 	else if (ft_strnstr(s, "rrr\n", 4))
 		return (rrr(a, b, 1), 1);
 	else
 		return (0);
+}
+
+void	lk()
+{
+	system("leaks checker");
 }
 
 int	main(int ac, char **av)
@@ -62,6 +83,7 @@ int	main(int ac, char **av)
 	t_list	*b;
 	char	*s;
 
+	atexit(lk);
 	if (ac < 2)
 		exit_failure("\x1B[31menter some numbers to sort");
 	a = read_numbers(av, a);
@@ -73,7 +95,7 @@ int	main(int ac, char **av)
 		{
 			free(s);
 			free_all(a);
-			exit_failure("\x1B[31mError!\n");
+			exit_failure("\x1B[31mError!");
 		}
 		free(s);
 		s = get_next_line(0);

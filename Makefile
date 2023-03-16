@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 13:57:09 by nakebli           #+#    #+#              #
-#    Updated: 2023/03/12 18:23:17 by nakebli          ###   ########.fr        #
+#    Updated: 2023/03/16 22:40:33 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS = push_swap_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 HEADER = push_swap.h
 

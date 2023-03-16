@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:09:57 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 19:24:37 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/15 22:16:41 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	pb(t_list **a, t_list **b, int flag)
 {
 	t_list	*c;
 
+	if (!*a)
+		return ;
 	c = *a;
 	(*a) = (*a)->next;
 	c->next = *b;
@@ -28,6 +30,8 @@ void	pa(t_list **a, t_list **b, int flag)
 {
 	t_list	*c;
 
+	if (!*b)
+		return ;
 	c = *b;
 	(*b) = (*b)->next;
 	c->next = *a;

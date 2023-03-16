@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:33:43 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/12 14:32:13 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/16 22:44:24 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	ft_is_sorted(t_list **data)
 {
 	t_list	*temp;
 
+	if (!*data)
+		return (0);
 	temp = *data;
 	if (ft_lstsize(temp) <= 1)
 		return (1);
@@ -75,6 +77,8 @@ void	free_all(t_list *a)
 {
 	t_list	*tmp;
 
+	if (!a)
+		return ;
 	while (a->next)
 	{
 		tmp = a;

@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 23:06:21 by nakebli           #+#    #+#             */
-/*   Updated: 2023/03/11 17:54:32 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/16 22:53:55 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j] != '\0')
 		js[i++] = s2[j++];
 	js[i] = '\0';
+	free((char *)s1);
 	return (js);
 }

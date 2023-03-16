@@ -6,7 +6,7 @@
 /*   By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:39:47 by nakebli           #+#    #+#             */
-/*   Updated: 2023/02/28 17:31:50 by nakebli          ###   ########.fr       */
+/*   Updated: 2023/03/13 23:15:15 by nakebli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 //first part
 int		ft_isalpha(int arg);
 int		ft_isdigit(int arg);
