@@ -6,7 +6,7 @@
 #    By: nakebli <nakebli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 13:57:09 by nakebli           #+#    #+#              #
-#    Updated: 2023/03/16 22:40:33 by nakebli          ###   ########.fr        #
+#    Updated: 2023/03/16 23:04:42 by nakebli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,18 +34,18 @@ RM = rm -rf
 all: $(NAME) $(OBJS) $(HEADER)
 	@printf "\033[0;32mDONE ✅"
 
-%.o: %.c $(HEADER)
-	@cc -c $(CFLAGS) $<  -o $@
+%.o: %.c $(HEADER) libft/libft.h
+	@cc -c $(CFLAGS) $<  -o $@ 
 	@printf "\033[0;32m{compiling : %-30s .....} \r" ${notdir $@}
 
-$(NAME): $(OBJS) $(HEADER) main.c libft/libft.h
+$(NAME): $(OBJS) $(HEADER) main.c
 	make bonus -C libft
 	cc main.c -o $(NAME) $(OBJS) libft/libft.a
 
 bonus : $(B_NAME) $(OBJS) $(HEADER)
 	@printf "\033[0;32mDONE ✅"
 
-$(B_NAME): $(OBJS) $(HEADER) libft/libft.h checker.c
+$(B_NAME): $(OBJS) $(HEADER) checker.c
 	make bonus -C libft
 	cc checker.c -o $(B_NAME) $(OBJS) libft/libft.a
 
